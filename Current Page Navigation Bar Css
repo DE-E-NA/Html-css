@@ -1,0 +1,113 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: wheat;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.container .header-wrapper {
+    height: 50px;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+}
+
+.header-wrapper h1 {
+    text-align: center;
+    margin: 0;
+}
+
+.container .contents-wrapper {
+    position: relative;
+}
+
+.contents-wrapper .current-page-navigation-wrapper {
+    position: absolute;
+    right: 20px;
+}
+
+.current-page-navigation-wrapper .current-page-navigation-links {
+    list-style-type: none;
+}
+
+.current-page-navigation-wrapper .current-page-navigation-links li {
+    display: inline-block;
+    padding: 0 20px;
+}
+
+.current-page-navigation-wrapper .current-page-navigation-links li a {
+    text-decoration: none;
+    color: #000;
+    position: relative;
+}
+
+.current-page-navigation-wrapper .current-page-navigation-links li a:hover {
+    color: #00f;
+    text-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+}
+
+.current-page-navigation-wrapper .current-page-navigation-links li a::before {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    background-color: #f00;
+    height: 3px;
+    width: 0;
+    transition: all 0.5s ease;
+}
+
+.current-page-navigation-wrapper .current-page-navigation-links li a:hover::before {
+    width: 100%;
+}
+
+.current-page-navigation-wrapper .current-page-navigation-links li.second-current-page-navigation a::before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.current-page-navigation-wrapper .current-page-navigation-links li.third-current-page-navigation a::before {
+    width: 100%;
+    bottom: -10px;
+    opacity: 0;
+}
+
+.current-page-navigation-wrapper .current-page-navigation-links li.third-current-page-navigation a:hover::before {
+    bottom: -5px;
+    opacity: 1;
+}
+
+.current-page-navigation-wrapper .current-page-navigation-links li.forth-current-page-navigation a::before {
+    width: 100%;
+    transform: scaleX(0);
+    transition: transform 0.5s;
+    transform-origin: right;
+}
+
+.current-page-navigation-wrapper .current-page-navigation-links li.forth-current-page-navigation a:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.current-page-navigation-wrapper .current-page-navigation-links li.fifth-current-page-navigation a::before {
+    left: auto;
+    right: 0;
+}
+
+.container .footer-wrapper {
+    height: 200px;
+    width: 100%;
+    background-color: #000;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+}
+
+.footer-wrapper h1 {
+    text-align: center;
+    margin: 80px;
+}
